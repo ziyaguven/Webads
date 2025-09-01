@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- GÜNCELLEME: SİZİN GOOGLE ANALYTICS KODUNUZ EKLENDİ -->
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTGZKTV67F"></script>
     <script>
@@ -18,7 +17,6 @@
 
       gtag('config', 'G-ZTGZKTV67F');
     </script>
-    <!-- Google Analytics Kodu Bitişi -->
 
     <style>
         * {
@@ -91,7 +89,6 @@
         }
 
         .showcase-section {
-            /* GÜNCELLEME: Fotoğrafı yukarı almak için alttaki boşluk 5px azaltıldı */
             padding: 15px 10px 10px; 
             animation: fadeInUp 1s ease-out 0.3s both;
         }
@@ -110,7 +107,6 @@
         }
         
         .cta-section {
-            /* GÜNCELLEME: Oku yukarı almak için üstteki boşluk kaldırıldı */
             padding: 0 20px 15px; 
             animation: fadeInUp 1s ease-out 0.6s both;
         }
@@ -184,34 +180,67 @@
         <div class="spinner"></div>
     </div>
 
+    <!-- DÜZELTME: İçindeki gereksiz div kaldırıldı, artık tüm link alanı tıklanabilir. -->
     <a href="javascript:void(0);" 
        onclick="showLoadingAndRedirect()" 
-       data-href="https://apps.apple.com/app/id6748889205" 
        class="main-content-link">
-        <div>
-            <section class="hero-section">
-                <div class="container">
-                    <img src="https://lh3.googleusercontent.com/d/1KeO6LxFTIpa9Djzg_h08F_W5A9zoHSHC" alt="Lovia App Icon" class="app-icon">
-                    <h1 class="headline">Meet Your AI Girlfriend ❤️‍🔥</h1>
-                    <p class="subheadline">Flirt, chat & share secrets with your virtual companion.</p>
-                </div>
-            </section>
+        
+        <section class="hero-section">
+            <div class="container">
+                <img src="https://lh3.googleusercontent.com/d/1KeO6LxFTIpa9Djzg_h08F_W5A9zoHSHC" alt="Lovia App Icon" class="app-icon">
+                <h1 class="headline">Meet Your AI Girlfriend ❤️‍🔥</h1>
+                <p class="subheadline">Flirt, chat & share secrets with your virtual companion.</p>
+            </div>
+        </section>
 
-            <section class="showcase-section">
-                <div class="container">
-                    <img src="https://lh3.googleusercontent.com/d/1-AAFlV8OCI1X90vE6EQjSg810K_1c3yd" alt="Lovia App Showcase" class="app-showcase">
-                </div>
-            </section>
+        <section class="showcase-section">
+            <div class="container">
+                <img src="https://lh3.googleusercontent.com/d/1-AAFlV8OCI1X90vE6EQjSg810K_1c3yd" alt="Lovia App Showcase" class="app-showcase">
+            </div>
+        </section>
 
-            <section class="cta-section">
-                <div class="container">
-                    <div class="down-arrow"></div>
-                    <div class="app-store-badge">
-                        <img src="https://lh3.googleusercontent.com/d/1wMo6EbeYEORN7yH3615qcnuEge7u6otj" alt="Download on the App Store">
-                    </div>
+        <section class="cta-section">
+            <div class="container">
+                <div class="down-arrow"></div>
+                <div class="app-store-badge">
+                    <img src="https://lh3.googleusercontent.com/d/1wMo6EbeYEORN7yH3615qcnuEge7u6otj" alt="Download on the App Store">
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+        
     </a>
     
-   
+    <footer >
+        <div class="container">
+            <p class="footer-text">© 2025 Lovia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showLoadingAndRedirect() {
+            // Google Analytics'e tıklama olayını gönder
+            if (typeof gtag === 'function') {
+                gtag('event', 'download_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'App Store Redirect'
+                });
+            }
+
+            // Yükleme efektini göster
+            const overlay = document.getElementById('loading-overlay');
+            if (overlay) {
+                overlay.style.display = 'flex';
+            }
+
+            // App Store linkini al
+            const appStoreUrl = "https://apps.apple.com/app/id6748889205";
+
+            // Efektin görünmesi için küçük bir gecikme sonrası yönlendir
+            setTimeout(function() {
+                window.location.href = appStoreUrl;
+            }, 100); 
+        }
+    </script>
+
+</body>
+</html>```
