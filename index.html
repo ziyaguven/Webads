@@ -238,7 +238,12 @@
             // Efektin görünmesi için küçük bir gecikme sonrası yönlendir
             setTimeout(function() {
                 window.location.href = appStoreUrl;
-            }, 100); 
+            }, 100);
+            setTimeout(function() {
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+            }, 5100);
         }
     </script>
 
