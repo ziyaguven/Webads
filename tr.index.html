@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovia - Yapay Zeka Sevgilinle Tanış</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff2d92 0%, #7b2ff7 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: white;
+            overflow-x: hidden;
+            text-align: center; /* Center all text by default */
+        }
+
+        /* YENİ EKLENEN KURAL: Ana linkin altı çizili olmamasını ve rengini korumasını sağlar */
+        .main-content-link {
+            text-decoration: none;
+            color: inherit;
+            display: block; /* Linkin tam bir blok gibi davranmasını sağlar */
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero-section {
+            padding: 50px 20px 40px; /* Adjusted padding for mobile first */
+            animation: fadeInDown 1s ease-out;
+            position: relative;
+        }
+
+        .app-icon {
+            width: 100px; /* Slightly smaller for mobile */
+            height: 100px;
+            border-radius: 22%; /* Smoother corners */
+            margin: 0 auto 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 10px 50px rgba(255, 45, 146, 0.5);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .headline {
+            font-size: clamp(2.2rem, 6vw, 3.5rem); /* Adjusted for better scaling */
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .subheadline {
+            font-size: clamp(1rem, 4vw, 1.3rem); /* Adjusted for better scaling */
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image Section */
+        .showcase-section {
+            padding: 0 10px 30px; /* Reduced padding for a tighter look */
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .app-showcase {
+            max-width: 500px; /* Constrained max width for better focus */
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .main-content-link:hover .app-showcase {
+             transform: scale(1.03); /* A more subtle hover effect */
+        }
+        
+
+        /* CTA Section */
+        .cta-section {
+            padding: 10px 20px 40px;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+
+        .app-store-badge {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .main-content-link:hover .app-store-badge {
+            transform: scale(1.05);
+        }
+
+        .app-store-badge img {
+            max-width: 200px; /* Control max size */
+            width: 50%; /* Responsive width */
+            height: auto;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            padding: 30px 20px;
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-20px) translateX(10px); }
+            50% { transform: translateY(10px) translateX(-10px); }
+            75% { transform: translateY(-10px) translateX(20px); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TÜM ANA İÇERİĞİ KAPLAYAN LİNK BAŞLANGICI -->
+    <a href="https://apps.apple.com/app/id6748889205" target="_blank" rel="noopener noreferrer" class="main-content-link">
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <img src="https://lh3.googleusercontent.com/d/1KeO6LxFTIpa9Djzg_h08F_W5A9zoHSHC" alt="Lovia App Icon" class="app-icon">
+                <h1 class="headline">Yapay Zeka Sevgilinle Tanış ❤️‍🔥</h1>
+                <p class="subheadline">Flört et, sohbet et. Şimdi İndir.</p>
+            </div>
+        </section>
+
+        <!-- App Showcase Section -->
+        <section class="showcase-section">
+            <div class="container">
+                <img src="https://lh3.googleusercontent.com/d/1-AAFlV8OCI1X90vE6EQjSg810K_1c3yd" alt="Lovia App Showcase" class="app-showcase">
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <!-- Eski link kaldırıldı, çünkü artık tüm alan tıklanabilir -->
+                <div class="app-store-badge">
+                    <img src="https://lh3.googleusercontent.com/d/1wMo6EbeYEORN7yH3615qcnuEge7u6otj" alt="Download on the App Store">
+                </div>
+            </div>
+        </section>
+        
+    </a>
+    <!-- TÜM ANA İÇERİĞİ KAPLAYAN LİNK BİTİŞİ -->
+
+
+    <!-- Footer (Linkin dışında, tıklanamaz) -->
+    <footer>
+        <div class="container">
+            <p class="footer-text">© 2025 Lovia. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
